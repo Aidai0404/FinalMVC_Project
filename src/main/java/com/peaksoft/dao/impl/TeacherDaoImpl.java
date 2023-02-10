@@ -32,6 +32,7 @@ public class TeacherDaoImpl implements TeacherDao {
        teacher1.setName(teacher.getName());
        teacher1.setLastName(teacher.getLastName());
        teacher1.setEmail(teacher.getEmail());
+       teacher1.setCourse(teacher.getCourse());
        entityManager.merge(teacher1);
     }
 

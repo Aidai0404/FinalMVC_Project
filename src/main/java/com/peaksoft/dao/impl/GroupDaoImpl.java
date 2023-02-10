@@ -54,7 +54,8 @@ public class GroupDaoImpl implements GroupDao {
 
     @Override
     public List<Course> getCoursesByGroupId(Long id) {
-        List<Course>courses = entityManager.createQuery("select c from Course c join c.groups gr1 where gr1.id=?1").setParameter(1,id).getResultList();
+        List<Course>courses = entityManager.createQuery("select c from Course c join c.groups gr1 where gr1.id=?1")
+                .setParameter(1,id).getResultList();
         return courses;
     }
 
@@ -71,7 +72,8 @@ public class GroupDaoImpl implements GroupDao {
 //}
 @Override
 public  List<Student> search(String studentName,Long groupId) {
-    List<Student> students = entityManager.createQuery("select  s from Student s  join s.group gr where gr.id=?1 and s.name =?2").setParameter(1, groupId).setParameter(2,studentName).getResultList();
+    List<Student> students = entityManager.createQuery("select  s from Student s  join s.group gr where gr.id=?1 and s.name =?2")
+            .setParameter(1, groupId).setParameter(2,studentName).getResultList();
     return students;
 }
 }

@@ -11,11 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HelloController {
     @GetMapping
     public String mainView(Model model){
-        model.addAttribute("companies",new Company());
-        model.addAttribute("courses",new Course());
-        model.addAttribute("teachers",new Teacher());
-        model.addAttribute("groups",new Group());
-        model.addAttribute("students",new Student());
+
         return "main";
     }
 }
